@@ -119,8 +119,8 @@ void DrawFormatString(int a, int b, Uint32 color, const char *str, ...)
 //void DrawFormatString(int a, int b, int c
 
 //Key Aliases
-#define KEY_INPUT_ESCAPE SDLK_ESCAPE
 
+//
 bool ex = false;
 
 void UpdateKeys()
@@ -137,26 +137,36 @@ void UpdateKeys()
 	case SDL_JOYAXISMOTION:
 	    if(event.jaxis.which == 0)
 	    {
-		if(event.jaxis.axis == JOYSTICK_XAXIS)
-		{
-		    if(event.jaxis.value < -1024) keysHeld[SDLK_LEFT] = true;
-		    else if(event.jaxis.value > 1024) keysHeld[SDLK_RIGHT] = true;
-		    else {
-			keysHeld[SDLK_LEFT] = false;
-			keysHeld[SDLK_RIGHT] = false;
-		    }
-		}
-		else if(event.jaxis.axis == JOYSTICK_YAXIS)
-		{
-		    if(event.jaxis.value < -1024) keysHeld[SDLK_UP] = true;
-		    else if(event.jaxis.value > 1024) keysHeld[SDLK_DOWN] = true;
-		    else {
-			keysHeld[SDLK_UP] = false;
-			keysHeld[SDLK_DOWN] = false;
-		    }
-		}
+			if(event.jaxis.axis == JOYSTICK_XAXIS)
+			{
+				if(event.jaxis.value < -2048) keysHeld[SDLK_LEFT] = true;
+				else if(event.jaxis.value > 2048) keysHeld[SDLK_RIGHT] = true;
+				else {
+				keysHeld[SDLK_LEFT] = false;
+				keysHeld[SDLK_RIGHT] = false;
+				}
+			}
+			else if(event.jaxis.axis == JOYSTICK_YAXIS)
+			{
+				if(event.jaxis.value < -2048) keysHeld[SDLK_UP] = true;
+				else if(event.jaxis.value > 2048) keysHeld[SDLK_DOWN] = true;
+				else {
+				keysHeld[SDLK_UP] = false;
+				keysHeld[SDLK_DOWN] = false;
+				}
+			}
 	    }
 	    break;
+	case SDL_JOYHATMOTION:
+		if(event.jhat.value & SDL_HAT_UP) keysHeld[SDLK_UP] = true;
+		else keysHeld[SDLK_UP] = false;
+		if(event.jhat.value & SDL_HAT_LEFT) keysHeld[SDLK_LEFT] = true;
+		else keysHeld[SDLK_LEFT] = false;
+		if(event.jhat.value & SDL_HAT_RIGHT) keysHeld[SDLK_RIGHT] = true;
+		else keysHeld[SDLK_RIGHT] = false;
+		if(event.jhat.value & SDL_HAT_DOWN) keysHeld[SDLK_DOWN] = true;
+		else keysHeld[SDLK_DOWN] = false;
+		break;
 	case SDL_QUIT:
 	    ex = true;
 	    break;
