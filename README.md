@@ -2,7 +2,8 @@ Open Syobon Action
 ==================
 ###### Original game developer: Chiku (ちく)
 ###### Open-source port developer: Mathew Velasquez
-###### Developer/maintainer of this fork: Karen／明美 (@angelXwind)
+###### Forked from: Karen／明美 (@angelXwind)
+###### Developer/maintainer of this fork (primarily personal use): tdis8629
 #### [English] [[日本語]](README_ja.md)
 
 Open Syobon Action (オープンしょぼんのアクション) is an open-source cross-platform port of the unforgiving Japanese platformer using SDL.
@@ -24,7 +25,7 @@ Controls (Keyboard)
 * Left/Right: Move
 * Z or Up: Jump
 * Space: Double-speed
-* 0 (while in-game): Self-destruction
+* O (while in-game): Self-destruction
 * Escape: Exit
 * F1: Return to title screen
 * 1-9 (while at the title screen): Select level
@@ -32,7 +33,7 @@ Controls (Keyboard)
 
 Bugs
 ----
-Please report any bugs at the GitHub issue tracker: https://github.com/angelXwind/OpenSyobonAction/issues
+Please report any bugs at the GitHub issue tracker: https://github.com/tdis8629/OpenSyobonAction/issues
 
 Command Line Arguments
 ----------------------
@@ -54,6 +55,8 @@ Unimplemented
 -------------
 * Font thickness (Not really important)
 * Port to other operating systems (OS X, iOS, Android, etc.)
+* Choice of joystick/dpad controls
+* Mapping keyboard bindings to buttons
 
 Release Changelog
 -----------------
