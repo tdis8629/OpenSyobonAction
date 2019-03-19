@@ -1,8 +1,10 @@
 SyobonAction:main.o loadg.o DxLib.o
-	gcc main.o loadg.o DxLib.o -o SyobonAction `sdl-config --libs` -lSDL_gfx -lSDL_image -lSDL_mixer -lSDL_ttf
+	g++ main.o loadg.o DxLib.o -o SyobonAction `sdl-config --libs` -lSDL_gfx -lSDL_image -lSDL_mixer -lSDL_ttf
 main.o:main.cpp
-	gcc -c main.cpp
+	g++ -c main.cpp
 loadg.o:loadg.cpp
-	gcc -c loadg.cpp
+	g++ -c loadg.cpp
 DxLib.o:DxLib.cpp
-	gcc -c DxLib.cpp
+	g++ -c DxLib.cpp
+clean:
+	rm -f DxLib.o loadg.o main.o SyobonAction syobon.info
